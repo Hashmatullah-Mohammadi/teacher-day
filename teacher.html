@@ -739,7 +739,7 @@
       <!-- 🏷️ برچسب تاریخ -->
       <div class="badge">
         <i class="fa-solid fa-star"></i>
-        <span>۵ میزان — روز معلم</span>
+        <span>۱۳ میزان — روز معلم</span>
         <i class="fa-solid fa-star"></i>
       </div>
 
@@ -780,20 +780,15 @@
     </div>
 
     <script>
-      /* ============================================
-     ✨ جرقه‌های اطراف شمع (CSS-based)
-     ============================================ */
       const candleWrap = document.querySelector(".candle-wrap");
 
       function createSpark() {
         const s = document.createElement("div");
         s.className = "spark";
-        // موقعیت شروع: دور شعله
         const startAngle = Math.random() * Math.PI * 2;
         const radius = 8 + Math.random() * 10;
         s.style.left = `calc(50% + ${Math.cos(startAngle) * radius}px)`;
         s.style.top = `${5 + Math.random() * 20}px`;
-        // مسیر حرکت
         s.style.setProperty("--dx", (Math.random() - 0.5) * 100 + "px");
         s.style.setProperty("--dy", -(40 + Math.random() * 80) + "px");
         s.style.animationDuration = 2 + Math.random() * 2 + "s";
@@ -804,22 +799,16 @@
       setInterval(createSpark, 350);
       for (let i = 0; i < 4; i++) setTimeout(createSpark, i * 200);
 
-      /* ============================================
-     🌟 ستاره‌های زنده که از شمع به آسمان می‌روند
-     ============================================ */
       const starsLive = document.getElementById("starsLive");
 
       function createLiveStar() {
         const s = document.createElement("i");
         s.className = "fa-solid fa-star live-star";
-        // موقعیت افقی: از مرکز (شمع) به اطراف
-        const startX = 50 + (Math.random() - 0.5) * 6; // نزدیک به مرکز
+        const startX = 50 + (Math.random() - 0.5) * 6;
         s.style.left = startX + "vw";
         s.style.bottom = 30 + Math.random() * 10 + "%";
         s.style.fontSize = 8 + Math.random() * 12 + "px";
-        // مسیر افقی
         s.style.setProperty("--tx", (Math.random() - 0.5) * 60 + "vw");
-        // رنگ‌های متنوع
         const colors = ["#ffd966", "#fff8e0", "#ffb347", "#ffa500", "#fff"];
         const c = colors[Math.floor(Math.random() * colors.length)];
         s.style.color = c;
